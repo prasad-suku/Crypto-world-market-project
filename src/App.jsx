@@ -23,7 +23,6 @@ const App = () => {
           <Route path="/coin/:coinid" element={<Coin />} />
           <Route path="/signIn" element={<SignIn />} />
         </Routes>
-        {/* <Footer /> */}
       </div>
     </BrowserRouter>
   );

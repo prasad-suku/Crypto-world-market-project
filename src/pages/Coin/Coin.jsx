@@ -3,6 +3,7 @@ import "./coin.css";
 import { useParams, Link } from "react-router-dom";
 import { Coincontext } from "../../context/Coincontext";
 import LineChart from "../../components/LineChart/LineChart";
+import Footer from "../../components/footer/Footer";
 
 const Coin = () => {
   const { currency, Convertshortamt } = useContext(Coincontext);
@@ -69,12 +70,12 @@ const Coin = () => {
 
   return (
     <>
-      <div className="main ">
-        <div className="coin-container">
-          <div className="coin grid grid-cols-12 h-90 gap-6  p-8">
+      <div className="main">
+        <div className="coin-container ">
+          <div className="coin grid grid-cols-12   gap-6  p-8">
             {/* Left-side info */}
             <div className="left-side-info col-span-12 lg:col-span-4 md:col-span-12 flex flex-col items-center">
-              <div className="space-y-4 w-full">
+              <div className="space-y-5 w-full">
                 <div className="flex items-center space-x-2">
                   <img
                     src={coindata.image.thumb}
@@ -89,10 +90,10 @@ const Coin = () => {
                   </span>
                 </div>
                 <div className="text-4xl font-bold flex items-center gap-2">
-                  {currency.symbol}
-                  {coindata.market_data.current_price[
-                    currency.name
-                  ].toLocaleString()}
+                  Price: {currency.symbol}
+                  {coindata.market_data.current_price[currency.name]
+                    .toFixed(2)
+                    .toLocaleString()}
                   <span
                     className={`${
                       coindata.market_data
@@ -164,7 +165,9 @@ const Coin = () => {
                     </div>
                   </div>
                 </div>
-                <div className="social_links space-y-2">
+
+                <hr />
+                <div className="social_links space-y-2 ">
                   <p className="text-lg text-center">{coindata.name} - Links</p>
                   <ul className="space-y-1">
                     <li className="flex gap-3">
@@ -180,9 +183,15 @@ const Coin = () => {
                       <span>Github:</span>
                       <a
                         className="text-green-200 hover:text-white"
-                        href={coindata.links.repos_url.github[0]}
+                        href={
+                          coindata.links.repos_url.github[1]
+                            ? coindata.links.repos_url.github[1]
+                            : "#"
+                        }
                       >
-                        {coindata.links.repos_url.github[0]}
+                        {coindata.links.repos_url.github[1]
+                          ? coindata.links.repos_url.github[1]
+                          : "Not Provided"}
                       </a>
                     </li>
                   </ul>
@@ -191,7 +200,7 @@ const Coin = () => {
             </div>
 
             {/* Chart Section */}
-            <div className="balance col-span-12 lg:col-span-8 md:col-span-12 flex flex-col items-center mt-5 lg:mt-2">
+            <div className="balance col-span-12 lg:col-span-8 md:col-span-12 flex flex-col items-center mt-5 ">
               <div className="coin-description flex flex-col items-center">
                 <img
                   className="w-20"
@@ -201,18 +210,20 @@ const Coin = () => {
                 <p className="text-2xl mt-2">
                   {coindata.name}({coindata.symbol})
                 </p>
-                <hr className="h-1 w-40 bg-white my-4" />
+                <hr className="h-1 w-40 bg-white my-3" />
                 <p className="font-light text-wrap text-center sm:px-20">
                   {coindata.description.en.split(".").slice(0, 1)}
                 </p>
               </div>
 
               {/* linechart */}
-              <div className=" mt-8 sm:mt-5  lg:h-3/4 lg:w-4/6 min-w-[300px] min-h-[150px]">
+              {/* style  --lg:h-3/4 lg:w-4/6 min-w-[300px] min-h-[150px] */}
+              <div className=" mt-10 sm:mt-5 linechart sm:h-[300px] ">
                 <LineChart coinname={coinid} currencyname={currency.name} />
               </div>
             </div>
           </div>
+          <Footer></Footer>
         </div>
       </div>
     </>

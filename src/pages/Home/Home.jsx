@@ -16,11 +16,16 @@ const Home = () => {
     <>
       <div className="home">
         <div className="hero grid grid-cols-1 m-10 items-center gap-4 sm:grid-cols-1 md:grid-cols-2">
-          <div className="left-side">
+          <div
+            data-aos="fade-down"
+            data-aos-duration="800"
+            data-aos-once="true"
+            className="left-side flex flex-col space-y-3"
+          >
             <h1 className="sm:text-6xl text-4xl text-center font-bold mb-4 text-teal-400">
-              Explore <br /> Crypto MarketWorld.
+              Step into <br /> Crypto MarketWorld.
             </h1>
-            <p className="font-semibold text-slate-300">
+            <p className="font-semibold text-slate-300 sm:px-10 px-15">
               Discover up-to-date market data, price trends, and in-depth
               analytics for top cryptocurrencies. provides clear, concise, and
               real-time insights to help you stay informed in the fast-paced
@@ -29,7 +34,12 @@ const Home = () => {
           </div>
 
           {/* right side div section */}
-          <div className="right-side">
+          <div
+            className="right-side"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
             <img src={home_img} className="w-screen rounded-lg" alt="" />
           </div>
 
@@ -76,9 +86,8 @@ const Home = () => {
           ))}
         </div>
       </div>
-      {/* footer  section*/}
 
-      {/* top 1- coins */}
+      {/* footer  section */}
 
       <Footer />
     </>

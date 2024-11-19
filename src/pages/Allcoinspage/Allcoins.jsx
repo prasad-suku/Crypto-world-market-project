@@ -59,8 +59,8 @@ const Allcoins = () => {
       </div>
 
       {/* coin container */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 m-4">
-        {displaycoins.slice(0, 10).map((crypto, i) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 h-auto lg:grid-cols-4 gap-4 m-4">
+        {displaycoins.map((crypto, i) => (
           <div
             onClick={() => handleCoinClick(crypto.id)}
             key={i}
