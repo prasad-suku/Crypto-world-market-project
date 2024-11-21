@@ -47,9 +47,9 @@ const Home = () => {
         </div>
       </div>
 
-      <h2 className="flex justify-between  mb-7 px-4 items-center text-lg py-4 text-wrap gap-3 bg-black md:text-2xl">
+      <h2 className="flex justify-between  mb-7 px-4 items-center   py-4 text-wrap gap-3 text-sm bg-black md:text-2xl">
         TOP 10 Cryptocurrencies in the World{" "}
-        <span className="font-bold  text-xl md:text-2xl  text-white hover:cursor-pointer">
+        <span className="font-bold   md:text-2xl text-lg text-white hover:cursor-pointer">
           <Link to="/allcoins"> Explore more</Link>
         </span>
       </h2>

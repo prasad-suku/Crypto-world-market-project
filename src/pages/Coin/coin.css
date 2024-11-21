@@ -44,16 +44,44 @@
 
 .linechart {
   width: 90%;
-  margin: 1rem 4rem;
+  margin: 3rem 4rem;
+  margin-bottom: 8rem;
   height: 400px;
   /* background-color:; */
 }
 
+select {
+  padding: 7px 9px;
+  border-radius: 5px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+}
+
+option {
+  background: #002244;
+  color: white;
+}
+
+.error {
+  top: 0;
+  background: white;
+  display: grid;
+  align-items: center;
+}
+.error img {
+  width: 90%;
+  height: 60%;
+}
 @media (max-width: 600px) {
   .error img {
     width: 200px;
   }
-  .coin_info ul {
-    font-size: 18px;
+  .linechart {
+    width: 90%;
+    margin: 3rem 4rem;
+    margin-bottom: 7rem;
+    height: 200px;
+    /* background-color:; */
   }
 }

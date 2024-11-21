@@ -30,7 +30,6 @@ const Allcoins = () => {
       return coins.name.toLowerCase().includes(input.toLowerCase());
     });
     setdisplaycoins(coins);
-    setCurrentPage(1); // Reset to first page after search
   };
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Chart from "react-google-charts";
 
-const LineChart = ({ coinname, currencyname }) => {
+const LineChart = ({ coinname, currencyname, previousHistoricaldata }) => {
   const [data, setData] = useState([["Date", "Price"]]);
 
   const historicalChartsdata = async () => {
@@ -15,7 +15,7 @@ const LineChart = ({ coinname, currencyname }) => {
 
     try {
       const res = await fetch(
-        `https://api.coingecko.com/api/v3/coins/${coinname}/market_chart?vs_currency=${currencyname}&days=10`,
+        `https://api.coingecko.com/api/v3/coins/${coinname}/market_chart?vs_currency=${currencyname}&days=${previousHistoricaldata}`,
         options
       );
       const result = await res.json();
@@ -35,7 +35,7 @@ const LineChart = ({ coinname, currencyname }) => {
 
   useEffect(() => {
     historicalChartsdata();
-  }, [coinname, currencyname]); // Call whenever coinname or currencyname changes
+  }, [coinname, currencyname, previousHistoricaldata]); // Call whenever coinname or currencyname changes
 
   return <Chart chartType="LineChart" data={data} height="100%" />;
 };
