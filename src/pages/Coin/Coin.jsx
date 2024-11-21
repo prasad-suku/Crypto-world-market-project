@@ -58,8 +58,9 @@ const Coin = () => {
   //  Error or no data case
   if (error || !coindata || !coindata.name) {
     return (
-      <div className="error">
+      <div className="error min-h-100  ">
         <img
+          className="w-50 h-50 mb-5 mx-auto mt-20 m-4"
           src="https://th.bing.com/th?id=OIP.EIEHSpTPA7nVq6Nck8SL1gHaGw&w=261&h=238&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"
           alt=""
         />
@@ -171,7 +172,7 @@ const Coin = () => {
                   <li className="flex gap-3">
                     <span>Website:</span>
                     <a
-                      className="text-green-200 hover:text-white"
+                      className="text-green-200 text-wrap hover:text-white"
                       href={coindata.links.homepage}
                     >
                       {coindata.links.homepage}

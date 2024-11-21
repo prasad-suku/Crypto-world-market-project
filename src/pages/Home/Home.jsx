@@ -15,14 +15,14 @@ const Home = () => {
   return (
     <>
       <div className="home">
-        <div className="hero grid grid-cols-1 m-10 items-center gap-4 sm:grid-cols-1 md:grid-cols-2">
+        <div className="hero grid grid-cols-1 sm:m-15 m-10 items-center gap-4 sm:grid-cols-1 md:grid-cols-2">
           <div
             data-aos="fade-down"
             data-aos-duration="800"
             data-aos-once="true"
             className="left-side flex flex-col space-y-3"
           >
-            <h1 className="sm:text-6xl text-4xl text-center font-bold mb-4 text-teal-400">
+            <h1 className="sm:text-6xl text-4xl text-center font-bold mb-4 text-teal-300">
               Step into <br /> Crypto MarketWorld.
             </h1>
             <p className="font-semibold text-slate-300 sm:px-10 px-15">
