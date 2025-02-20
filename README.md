@@ -1,7 +1,7 @@
 # 🚀 Cryptocurrency Dashboard  
--
-Live Link : https://world-cryptocurrency-market.netlify.app/ 
--
+
+- Live Link : https://world-cryptocurrency-market.netlify.app/ 
+
 A fully responsive **cryptocurrency dashboard** built using **React.js**, **Tailwind CSS**, and the **CoinGecko API** to provide real-time market data and detailed coin insights.  
 
 ---
